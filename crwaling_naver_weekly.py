@@ -72,6 +72,7 @@ for i in range(len(weekly)):
                 genre = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div').text
                 author = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div/div[1]/div[1]/div/div[1]').text
 
+                name = name.split('\n')[0] # 휴재인 경우 '휴재' 부분을 지워냄
                 story = story.replace('\n', ' ')
                 genre = genre.replace('\n', ' ')
                 author = author.replace('\n', ' / ')
