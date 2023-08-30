@@ -20,6 +20,10 @@ merged_df = pd.concat(data_frames, ignore_index=True)
 merged_df = merged_df.drop('id', axis=1)
 # 중복 삭제
 merged_df = merged_df.drop_duplicates(subset=['title'], keep='first')
+# 장르에서 #제거
+merged_df['genre'] = merged_df['genre'].str.replace(' ', '')
+merged_df['genre'] = merged_df['genre'].str.replace('#', ' ')
+merged_df['genre'] = merged_df['genre'].str.lstrip(' ')
 
 merged_df.to_csv(output, index=False, encoding='utf-8-sig')
 
