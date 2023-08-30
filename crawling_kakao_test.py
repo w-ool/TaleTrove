@@ -7,7 +7,7 @@ import pandas as pd
 import random
 import time
 
-kw_url = f'https://page.kakao.com/menu/10010/screen/52?tab_uid={12}'
+kw_url = f'https://page.kakao.com/menu/10010/screen/52?tab_uid={1}'
 chromedriver_url = './chromedriver.exe'
 driver = webdriver.Chrome(service=Service(chromedriver_url))
 driver.get(kw_url)
@@ -124,4 +124,4 @@ webtoon_data['title'] = name_list
 webtoon_data['author'] = author_list
 webtoon_data['genre'] = genre_list
 webtoon_data['story'] = story_list
-webtoon_data.to_csv('./crawling_data/kakaopage_complete.csv', encoding='utf-8-sig')
+webtoon_data.to_csv('./crawling_data/kakaopage_weekly.csv', encoding='utf-8-sig')
