@@ -61,11 +61,11 @@ else:
 
 # 유사도 리스트 높은순으로 정렬
 similarity_list.sort(reverse=True)
-print(similarity_list)
 
 # input이 db에 있어서 100%유사한 경우 제외
-similarity_pre = similarity_list[0]
-if similarity_pre == 1.:
+# similarity_pre = similarity_list[0]
+# if similarity_pre == 1.:
+if user_input != dict[similarity_list[0]][0]:
     # top 5개 유사도를 지닌 작품 불러오기
     for i in range(5):
         similarity = similarity_list[i]
