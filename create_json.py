@@ -36,13 +36,13 @@ platform = webtoon_df['platform'].to_list()
 
 # title을 키로 하는 json 생성
 for title, vector, genre, author, platform in zip(titles, vectors, genres, authors, platform):
-    json_data[title] = vector, genre, author, platform
+    json_data[title.replace(' ', '')] = vector, genre, author, platform
 
 try: 
     print(json_data[titles[0]])
 except:
     print(KeyError)
 # json 저장
-json_filename = './vector_data/webtoon_vectors.json'
+json_filename = './vector_data/webtoon_vectors_nospace.json'
 with open(json_filename, 'w') as json_file:
     json.dump(json_data, json_file, indent=4, default=lambda x: x.tolist() if isinstance(x, np.ndarray) else x)
